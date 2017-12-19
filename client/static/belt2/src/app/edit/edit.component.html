@@ -1,0 +1,17 @@
+<h1>Welcome, {{ user }}</h1>
+<a (click)="logout()">Logout</a>
+<a (click)="answerQ()">Answer the Question</a>
+
+<button (click)="goHome()">Go Home</button>
+
+<h1>{{ question[0].question }}</h1>
+<h3>{{ question[0].desc }}</h3>
+
+
+<div *ngFor="let answer of question[0]._answers">
+    <p>{{ answer.user }}</p>
+    <h4>{{ answer.answer }}</h4>
+    <p>{{ answer.details }}</p>
+    <p>Likes: {{ answer.likes }}</p>
+    <button (click)="like(answer._id)">Like!</button>
+</div>

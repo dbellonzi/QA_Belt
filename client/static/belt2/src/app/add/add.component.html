@@ -1,0 +1,17 @@
+<a (click)="logout()">Logout</a>
+<a (click)="goHome()">Home</a>
+<a (click)="showQ()">Go back to Question</a>
+
+
+<h1>{{ question[0].question }}</h1>
+<h3>{{ question[0].desc }}</h3>
+
+
+<p *ngIf="err">{{ err.err }}</p>
+<form (submit)="addAns()" method="post">
+  <p>Your Answer:<textarea name="answer" [(ngModel)]="answer"></textarea></p>
+  <p>Supporting details for your answer:(optional)<textarea name="details" [(ngModel)]="details"></textarea></p>
+  <input type="submit" value="Submit">
+</form>
+<button (click)="cls()">Cancel</button>
+

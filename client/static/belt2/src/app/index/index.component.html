@@ -1,0 +1,22 @@
+<h1>Welcome {{ user }}</h1>
+<a (click)="logout()">Logout</a>
+
+<!-- <form (submit)="search()" method="post">
+    <p><input type="text" name="search">
+    <input type="submit" value="search"></p>
+</form> -->
+
+<table>
+    <tr>
+        <th>Question</th>
+        <th>Answers</th>
+        <th>Action</th>
+    </tr>
+
+    <tr *ngFor="let question of questions">
+        <td>{{ question.question }}</td>
+        <td>{{ question._answers.length }}</td>
+        <td><a (click)="showQ(question._id)">Show</a><a (click)="answerQ(question._id)">Answer</a></td>       
+    </tr>
+    <button (click)="newQuestion()">Add a Question</button>
+</table>

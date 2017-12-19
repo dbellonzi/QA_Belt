@@ -1,0 +1,14 @@
+<a (click)="goHome()">Home</a>
+<a (click)="logout()">Logout</a>
+<h1>Welcome, {{ user }}. Add a Question.</h1>
+
+<p *ngIf="err">{{ err.err }}</p>
+<form (submit)="add()" method=post>
+    <p>Question:<textarea name="recipie" [(ngModel)]="question"></textarea></p>
+    <p>Description:(optional)<textarea name="recipie" [(ngModel)]="desc"></textarea></p>
+
+    <input type="submit" value="Add Question">
+  </form>
+  <button (click)="cls()">Cancel</button>
+
+
